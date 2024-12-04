@@ -6,6 +6,21 @@ function Artify() {
 
     const [image_url, setImage_url] = useState("/");
     let inputRef = useRef(null);
+    const imageGenerator = async () => {
+        if (inputRef.current.value==="") {
+            return 0;
+        }
+        const response = await fetch(
+            "https://api.openai.com/v1/images/generations",
+            {
+                method: "POST",
+                headers:{
+                    "Content-Type":"application/json",
+                    Authorization: "Bearer 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"
+                }
+            }
+        )
+    }
 
   return (
     <div className='artify'>
@@ -14,11 +29,11 @@ function Artify() {
         </div>
         <div className="img-loading">
             <div className="image">
-                <img src={default_image} alt="" />
+                <img src={image_url==="/"?default_image:image_url} alt="" />
             </div>
         </div>
         <div className="search-box">
-            <input type="text" className='search-input' placeholder='What you want to see ?'/>
+            <input type="text" ref={inputRef} className='search-input' placeholder='What you want to see ?'/>
             <div className="generate-btn">Generate</div>
         </div>
 
