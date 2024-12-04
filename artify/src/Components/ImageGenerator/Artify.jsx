@@ -16,10 +16,15 @@ function Artify() {
                 method: "POST",
                 headers:{
                     "Content-Type":"application/json",
-                    Authorization: "Bearer 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"
-                }
+                    Authorization: "Bearer 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",
+                    "User-Agent":"Chrome",
+                },
+                body: JSON.stringify({
+                    prompt: `${inputRef.current.value}`,
+                    n:1, size:"512x512",
+                }),
             }
-        )
+        );
     }
 
   return (
@@ -34,7 +39,7 @@ function Artify() {
         </div>
         <div className="search-box">
             <input type="text" ref={inputRef} className='search-input' placeholder='What you want to see ?'/>
-            <div className="generate-btn">Generate</div>
+            <div className="generate-btn" onClick={() => {imageGenerator()}}>Generate</div>
         </div>
 
     </div>
