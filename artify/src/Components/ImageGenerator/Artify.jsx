@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Artify.css';
 import default_image from '../Assets/default_image.svg'
 
 function Artify() {
 
-    const [image_url, setImage_url] = useState("/")
+    const [image_url, setImage_url] = useState("/");
+    let inputRef = useRef(null);
 
   return (
     <div className='artify'>
