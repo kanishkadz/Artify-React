@@ -1,5 +1,5 @@
 import './App.css';
-import Artify from './Components/ImageGenerator/Artify'
+import Artify from './Components/ImageGenerator/artify'
 
 function App() {
   return (
