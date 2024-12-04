@@ -13,6 +13,10 @@ function Artify() {
                 <img src={default_image} alt="" />
             </div>
         </div>
+        <div className="search-box">
+            <input type="text" className='searc-input' placeholder='What you want to see ?'/>
+            <div className="generate-btn">Generate</div>
+        </div>
 
     </div>
   )
