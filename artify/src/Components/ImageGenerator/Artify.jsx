@@ -5,6 +5,7 @@ import default_image from '../Assets/default_image.svg'
 function Artify() {
 
     const [image_url, setImage_url] = useState("/");
+    const [loading, setLoading] = useState(false);
     let inputRef = useRef(null);
     const imageGenerator = async () => {
         if (inputRef.current.value==="") {
@@ -40,8 +41,8 @@ function Artify() {
                 <img src={image_url==="/"?default_image:image_url} alt="" />
             </div>
             <div className="loading">
-                <div className="loading-bar"></div>
-                <div className="loading-text">Loading...</div>
+                <div className={loading?"loading-bar-full":"loading-bar"}></div>
+                <div className={loading?"loading":"display-none"}>Loading...</div>
             </div>
         </div>
         <div className="search-box">
