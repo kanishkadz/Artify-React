@@ -16,7 +16,7 @@ function Artify() {
         }
         setError(null); // Clear previous errors
         setLoading(true);
-
+    
         try {
             const response = await fetch(
                 "https://api.openai.com/v1/images/generations",
@@ -34,23 +34,26 @@ function Artify() {
                     }),
                 }
             );
-
+    
             if (!response.ok) {
-                throw new Error(`API error: ${response.status} ${response.statusText}`);
+                const errorText = await response.text(); // Fetch error details
+                throw new Error(`API error: ${response.status} ${response.statusText}. Details: ${errorText}`);
             }
-
+    
             const data = await response.json();
             if (!data || !data.data || !data.data[0] || !data.data[0].url) {
                 throw new Error("Unexpected API response format.");
             }
-
+    
             setImage_url(data.data[0].url);
         } catch (err) {
+            console.error("Error generating image:", err); // Log full error details
             setError(err.message || "An error occurred while generating the image.");
         } finally {
             setLoading(false);
         }
     };
+    
 
     return (
         <div className="artify">
