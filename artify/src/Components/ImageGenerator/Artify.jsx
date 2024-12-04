@@ -26,7 +26,8 @@ function Artify() {
             }
         );
         let data = await response.json();
-        console.log(data);
+        let data_array = data.data;
+        setImage_url(data_array[0].url);
     }
 
   return (
@@ -37,6 +38,10 @@ function Artify() {
         <div className="img-loading">
             <div className="image">
                 <img src={image_url==="/"?default_image:image_url} alt="" />
+            </div>
+            <div className="loading">
+                <div className="loading-bar"></div>
+                <div className="loading-text">Loading...</div>
             </div>
         </div>
         <div className="search-box">
