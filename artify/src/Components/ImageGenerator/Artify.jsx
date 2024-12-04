@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Artify.css';
 import default_image from '../Assets/default_image.svg'
 
 function Artify() {
+
+    const [image_url, setImage_url] = useState("/")
+
   return (
     <div className='artify'>
         <div className="header">
