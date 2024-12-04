@@ -23,3 +23,12 @@
 .img-loading img{
     width: 512px;
 }
+.search-box{
+    display: flex;
+    width: 1000px;
+    height: 95px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    background: #1f3540;
+}
