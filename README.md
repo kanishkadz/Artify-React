@@ -1,10 +1,10 @@
-##🎨 Artify: AI Image Generator
+## 🎨 Artify: AI Image Generator
 
 This project is Artify, an AI-powered image generator developed using React, designed to help users create stunning, custom visuals with the power of artificial intelligence. The app allows users to input creative prompts and generates unique images based on their descriptions.
 
 ---
 
-##📱 Features
+## 📱 Features
 
 - **AI Image Generation:** Generates unique visuals from user-provided prompts.
 - **Dynamic Input Options:** Users can fine-tune their prompts for more personalized creations.
@@ -14,7 +14,7 @@ This project is Artify, an AI-powered image generator developed using React, des
 
 ---
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework:** React
 - **Language:** JavaScript
